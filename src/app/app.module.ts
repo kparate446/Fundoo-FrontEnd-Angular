@@ -7,15 +7,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatIconModule } from "@angular/material/icon";
-import {MaterialModule }from './material/material.module';
+import { MatIconModule } from '@angular/material/icon';
+import {MaterialModule } from './material/material.module';
+import {MatToolbarModule} from '@angular/material/toolbar'
+// import {MatCardModule} from '@angular/material/card';
 
 import { RegistrationComponent } from './components/registration/registration.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
+    ForgotpasswordComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,9 @@ import { RegistrationComponent } from './components/registration/registration.co
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MaterialModule
+    MaterialModule,
+    MatToolbarModule
+    // MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

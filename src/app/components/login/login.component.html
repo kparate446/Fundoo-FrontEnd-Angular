@@ -1,8 +1,9 @@
-<!-- <h1 style="margin-left: 40%; margin-top: 7%"> Login Page</h1> -->
-<div class = "mat-headline" style="margin-left: 40%; margin-top: 7%"> Login Page</div>
-
+<!-- <mat-card> -->
+  <!-- <h1 style="margin-left: 40%; margin-top: 7%"> Login Page</h1> -->
+<div class = "mat-headline" style="margin-left: 10%; margin-top: 5%;color:red;"> Login Page</div>
+<!-- <math-card-content> -->
 <div>
-<mat-form-field appearance="outline" fxFlext=50 style="width: 35%;">
+  <mat-form-field appearance="outline" fxFlext=50 style="width: 25%;">
     <!-- <mat-label>Outline form field</mat-label> -->
     <mat-label>Email</mat-label>
     <input matInput placeholder="Email">
@@ -12,12 +13,20 @@
   <br/>
 </div>
 <div>
-<mat-form-field appearance="outline" fxFlext=50 style="width: 35%;">
+<mat-form-field appearance="outline" fxFlext=50 style="width: 25%;">
   <mat-label>Password</mat-label>
     <input matInput placeholder="password">
     <mat-icon matSuffix>password</mat-icon>
     </mat-form-field>
+
   </div>
-  
-  <button color="primary" mat-raised-button>Login</button>
+<!-- </math-card-content> -->
+<!-- <mat-card-actions align="end"> -->
+  <div>
+  <button color="primary" (click)="login()" mat-raised-button >Login</button>
+  <button color="primary" routerLink='register' mat-raised-button>register</button>
+</div>
+<!-- </mat-card-actions> -->
   <!-- <button mat-icon-button class="large"><mat-icon>Login</mat-icon></button> -->
+<!-- </mat-card> -->
+<!-- <button mat-button (click)=navigatepage()>forgotpassword</button> -->
