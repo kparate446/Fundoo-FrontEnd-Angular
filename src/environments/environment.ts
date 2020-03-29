@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url:'/userapi'
+  url:'http://localhost:8080/userapi'
 };
 
 /*

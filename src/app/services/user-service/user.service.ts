@@ -8,6 +8,11 @@ export class UserService {
 url=environment.url;
   constructor(public HttpService:HttpService) { }
   login(data){
-return this.HttpService.post(this.url+'/loginuser',data);
+    console.log(data)
+return this.HttpService.post(this.url+'/loginusers',data);
+  }
+  registration(data){
+    console.log(data)
+    return this.HttpService.post(this.url+'/addusers',data);
   }
 }
