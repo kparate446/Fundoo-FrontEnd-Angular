@@ -37,4 +37,10 @@ export class LoginComponent implements OnInit {
       console.log("login response", error);
     })
   }
+  navigate() {
+    this.router.navigate(['/register'])
+  }
+  navigatepage() {
+    this.router.navigate(['/forgotpassword'])
+  }
 }

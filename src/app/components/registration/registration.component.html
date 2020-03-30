@@ -24,21 +24,22 @@
             <div>
                 <mat-form-field appearance="outline" fxFlext=50 style="width: 72%;">
                     <mat-label>Phone Number</mat-label>
-                    <input matInput placeholder="Phone Number" formControlName="phoneNumber">
+                    <input matInput placeholder="Phone Number" formControlName="phoneNo">
                 </mat-form-field>
             </div>
             <div>
-                <mat-form-field appearance="outline" fxFlext=50 style="width: 72%;margin-right: 1rem;">
+                <mat-form-field appearance="outline" fxFlext=50 style="width: 34%;margin-right: 1rem;">
                     <mat-label>Password</mat-label>
                     <input matInput placeholder="Password" formControlName="password">
                     <mat-hint>Use 8 or more characters with mix of letters,numbers&symbols</mat-hint>
                 </mat-form-field>
-                <!-- <mat-form-field appearance="outline" fxFlext=50 style="width: 35%;">
+                <mat-form-field appearance="outline" fxFlext=50 style="width: 34%;">
                     <mat-label>Confirm</mat-label>
-                    <input matInput placeholder="Confirm" formControlName="confirmPassword">
-                </mat-form-field> -->
+                    <input matInput placeholder="Confirm" formControlName="confirm">
+                </mat-form-field>
             </div>
         </form>
+        <br>
         <div>
             <button color="primary" (click)="registrationform()" mat-raised-button>Registration</button>
         </div>

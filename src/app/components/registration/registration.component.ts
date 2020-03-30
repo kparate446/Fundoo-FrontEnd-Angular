@@ -23,23 +23,22 @@ export class RegistrationComponent implements OnInit {
       firstName:['',[Validators.required,Validators.minLength(3)]],
       lastName:['',[Validators.required,Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber:['',[Validators.required,Validators.minLength(10)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      confirm: ['', [Validators.required, Validators.minLength(6)]],
+      phoneNo:['',[Validators.required,Validators.maxLength(10)]],
     });
   }
   registrationform(){
-    console.log("User Registartion");
+    console.log("User Registration");
     this.registrationservice.registration(this.registration.value).subscribe(response => {
       localStorage.setItem('token', response['data']);
       console.log(response)
-          this.snackbar.open("User Registration Successfully", 'register', {
+          this.snackbar.open("User Registration Successfully", '', {
         duration: 2000,
       });
       this.router.navigate(['/register'])
-
     }, error => {
       console.log("Registration response", error);
     })
   }
-
 }

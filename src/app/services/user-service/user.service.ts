@@ -5,14 +5,22 @@ import { environment } from "../../../environments/environment";
   providedIn: 'root'
 })
 export class UserService {
-url=environment.url;
-  constructor(public HttpService:HttpService) { }
-  login(data){
+  url = environment.url;
+  constructor(public HttpService: HttpService) { }
+  login(data) {
     console.log(data)
-return this.HttpService.post(this.url+'/loginusers',data);
+    return this.HttpService.post(this.url + '/loginusers', data);
   }
-  registration(data){
+  registration(data) {
     console.log(data)
-    return this.HttpService.post(this.url+'/addusers',data);
+    return this.HttpService.post(this.url + '/addusers', data);
+  }
+  forgotpassword(data){
+    console.log(data)
+    return this.HttpService.post(this.url + '/forgotpassword', data );
+  }
+  resetpassword(data){
+    console.log(data)
+    return this.HttpService.put(this.url + '/resetpassword',data);
   }
 }
