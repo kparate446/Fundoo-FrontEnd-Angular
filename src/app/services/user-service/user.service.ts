@@ -21,6 +21,6 @@ export class UserService {
   }
   resetpassword(data){
     console.log(data)
-    return this.HttpService.put(this.url + '/resetpassword',data);
+    return this.HttpService.post(this.url + '/resetpassword',data);
   }
 }

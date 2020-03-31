@@ -26,8 +26,10 @@ export class RegistrationComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirm: ['', [Validators.required, Validators.minLength(6)]],
       phoneNo:['',[Validators.required,Validators.maxLength(10)]],
+      type:['',[Validators.required]]
     });
   }
+  get f() { return this.registration.controls; }
   registrationform(){
     console.log("User Registration");
     this.registrationservice.registration(this.registration.value).subscribe(response => {
@@ -40,5 +42,10 @@ export class RegistrationComponent implements OnInit {
     }, error => {
       console.log("Registration response", error);
     })
+  }
+  navigate()
+  {
+    console.log("navigate")
+    this.router.navigate(['/login'])
   }
 }
