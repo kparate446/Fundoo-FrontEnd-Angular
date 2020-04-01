@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user-service/user.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
   registration: FormGroup;
   submitted = false;
+  hide;
 
   constructor(private registrationservice:UserService,
     private formBuilder: FormBuilder,
@@ -30,6 +31,7 @@ export class RegistrationComponent implements OnInit {
     });
   }
   get f() { return this.registration.controls; }
+  
   registrationform(){
     console.log("User Registration");
     this.registrationservice.registration(this.registration.value).subscribe(response => {

@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   login: FormGroup;
   submitted = false;
-  
+  hide;
+
   constructor(private loginservice:UserService,
     private formBuilder: FormBuilder,
     private snackbar:MatSnackBar,
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
       type:['',[Validators.required]]
     });
   }
+  get f() { return this.login.controls; }
   loginForm(){
     console.log("User Login");
     this.loginservice.login(this.login.value).subscribe(response => {
