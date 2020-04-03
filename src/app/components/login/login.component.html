@@ -32,21 +32,21 @@
       <div>
         <mat-form-field appearance="outline" fxFlext=50 style="width: 80%;">
           <mat-label>Password</mat-label>
-          <input required matInput placeholder="password" [type]="hide ? 'password' : 'text'"
-          formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+          <input required matInput placeholder="password" [type]="hide ? 'text' : 'password'" formControlName="password"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
           <!-- <mat-icon matSuffix>password</mat-icon> -->
-          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
           </mat-icon>
           <mat-error *ngIf="login.hasError('required', 'password')">
             Password is required
           </mat-error>
- 
+
         </mat-form-field>
       </div>
     </form>
     <div>
       <button color="primary" routerLink='forgotpassword' mat-raised-button>Forgot password?</button>
-      <br/>
+      <br />
       <button color="primary" routerLink='register' mat-raised-button>Create account</button>
       <button color="primary" style="margin-left: 6rem;" (click)="loginForm()" mat-raised-button>Login</button>
     </div>

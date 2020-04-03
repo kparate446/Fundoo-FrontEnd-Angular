@@ -24,8 +24,8 @@ export class RegistrationComponent implements OnInit {
       firstName:['',[Validators.required,Validators.minLength(3)]],
       lastName:['',[Validators.required,Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirm: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
+      confirm: ['', [Validators.required, Validators.minLength(5)]],
       phoneNo:['',[Validators.required,Validators.maxLength(10)]],
       type:['',[Validators.required]]
     });
@@ -37,6 +37,7 @@ export class RegistrationComponent implements OnInit {
     this.registrationservice.registration(this.registration.value).subscribe(response => {
       localStorage.setItem('token', response['data']);
       console.log(response)
+      window.alert("User Registration Successfully");
           this.snackbar.open("User Registration Successfully", '', {
         duration: 2000,
       });

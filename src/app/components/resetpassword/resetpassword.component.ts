@@ -25,16 +25,16 @@ export class ResetpasswordComponent implements OnInit {
       });
   }
   resetPasswordForm(){
-  //   console.log("User resetpassword");
-  //   this.resetpasswordservice.resetpassword(this.resetpassword.value).subscribe(response => {
-  //     localStorage.setItem('token', response['data']);
-  //     console.log(response)
-  //         this.snackbar.open("Reset Password is Successfully", '', {
-  //       duration: 2000,
-  //     });
-  //     this.router.navigate(['/resetpassword'])
-  //   }, error => {
-  //     console.log("Reset password response", error);
-  //   })
+    console.log("User resetpassword");
+    this.resetpasswordservice.resetpassword(this.resetpassword.value).subscribe(response => {
+      localStorage.setItem('token', response['data']);
+      console.log(response)
+          this.snackbar.open("Reset Password is Successfully", '', {
+        duration: 2000,
+      });
+      this.router.navigate(['/resetpassword'])
+    }, error => {
+      console.log("Reset password response", error);
+    })
   }
 }

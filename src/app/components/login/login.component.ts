@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.login = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
       type:['',[Validators.required]]
     });
   }
@@ -32,9 +32,10 @@ export class LoginComponent implements OnInit {
     this.loginservice.login(this.login.value).subscribe(response => {
       localStorage.setItem('token', response['data']);
       console.log(response)
-          this.snackbar.open("User Logged in Successfully", '', {
-        duration: 2000,
-      });
+      window.alert("User Logged in Successfully");
+      //     this.snackbar.open("", '', {
+      //   duration: 2000,
+      // });
       this.router.navigate([''])
     }, error => {
       console.log("login response", error);

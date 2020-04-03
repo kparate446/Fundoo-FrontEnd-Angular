@@ -29,9 +29,10 @@ export class ForgotpasswordComponent implements OnInit {
     this.forgotpasswordservice.forgotpassword(this.ForgotPassword.value).subscribe(response => {
       localStorage.setItem('token', response['data']);
       console.log(response)
-          this.snackbar.open("Forgot Password is Successfully", '', {
-        duration: 2000,
-      });
+      window.alert("Forgot Password is Successfully");
+      //     this.snackbar.open("Forgot Password is Successfully", '', {
+      //   duration: 2000,
+      // });
       this.router.navigate(['/forgotpassword'])
 
     }, error => {
